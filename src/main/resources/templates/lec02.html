@@ -7,9 +7,26 @@
 </head>
 
 <body>
+
+  <a href="/logout">ログアウト</a>
+
   <h1>Lec02 GET!</h1>
-  <div th:if="${name}">
-    Hi [[${name}]]
+  <div th:if="${room}">
+    エントリー
+    <ul>
+      <!--roomオブジェクトのroomNoというフィールドを指定している-->
+      <!--<li>RoomNo:[[${room.roomNo}]]</li>-->
+      <!--eachは所謂for each．この場合roomオブジェクトのusersフィールドにあるすべてのデータを一通り表示する
+        thが指定されているので[]が不要になる-->
+      <li th:each="user : ${room.users}">[[${user}]]</li>
+    </ul>
+  </div>
+
+  <!--sec:authenticationで認証情報にアクセスできる．nameはユーザ名を表す-->
+
+
+  <div th:if="${room}">
+    Hi <span sec:authentication="name"></span>
   </div>
 
   <div>
