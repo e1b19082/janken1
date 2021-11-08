@@ -1,4 +1,4 @@
-package oit.is.z0209.kaizi.janken1.security;
+package oit.is.z0209.kaizi.janken2.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,18 +21,13 @@ public class Lec03AuthConfiguration extends WebSecurityConfigurerAdapter {
 
     // 平文のパスワードをエンコーダにかけてハッシュ化し，"user1"と関連付けている．ロール名は"USER"
     // プログラム中に素のパスワードが含まれることになるので望ましくない
-    auth.inMemoryAuthentication().withUser("user1").password(passwordEncoder().encode("p@ss")).roles("USER");
+    auth.inMemoryAuthentication().withUser("user1").password(passwordEncoder().encode("user1")).roles("USER");
 
-    auth.inMemoryAuthentication().withUser("user10001").password(passwordEncoder().encode("pass10001")).roles("USER");
-
-    auth.inMemoryAuthentication().withUser("user10002").password(passwordEncoder().encode("pass10002")).roles("USER");
+    auth.inMemoryAuthentication().withUser("user2").password(passwordEncoder().encode("user2")).roles("USER");
 
     auth.inMemoryAuthentication().withUser("ほんだ").password(passwordEncoder().encode("honda")).roles("USER");
 
-    // $ sshrun htpasswd -nbBC 10 admin adm1n
-    // htpasswdでBCryptエンコードを行った後の文字列をパスワードとして指定している．
-    auth.inMemoryAuthentication().withUser("admin")
-        .password("$2y$10$3e7Hs2QZ/p91yJVgP5y/1OC7AC8jfc6YDYDzMGK1XieDlNR2nBGDe").roles("ADMIN");
+    auth.inMemoryAuthentication().withUser("いがき").password(passwordEncoder().encode("igaki")).roles("USER");
   }
 
   @Bean

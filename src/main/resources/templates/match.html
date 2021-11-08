@@ -1,31 +1,41 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.springframework.org/schema/security">
 
 <head>
   <meta charset="utf-8">
+  <title>match</title>
 </head>
 
 <body>
-  自身
-  <div th:if="${userName}">
-    [[${userName}]]
-  </div>
-  相手
-  <div th:if="${cpuName}">
-    [[${cpuName}]]
-  </div>
+  <script th:inline="javascript" th:if=${result}>
+    window.onload = function () {
+      let result = [[${ result }]];
+      let kekka = "あなたの手 " + result.playerHand + "<br>相手の手 " + result.cpuHand + "<br>結果 " + result.result;
+      document.getElementById("jankenResult").innerHTML = kekka;
+    }
+  </script>
 
-  <a href="/matchjanken?hand=Gu">ぐー</a>
-  <a href="/matchjanken?hand=Choki">ちょき</a>
-  <a href="/matchjanken?hand=Pa">ぱー</a>
+  <a href="/logout">ログアウト</a>
 
-  <div th:if="${janken}">
-    <p>あなたの手 [[${hand}]]</p>
-    <p>相手の手 [[${cpuHand}]]</p>
-    <p>結果 [[${syouhai}]]</p>
+  <h1>Match</h1>
+
+  <p th:if="${user1} and ${user2}">
+  <div>
+    <h2>[[${user1.name}]] V.S. [[${user2.name}]]</h2>
   </div>
-
-  <p>
-    <a href="/lec02">もどる</a>
   </p>
+
+  <div th:if="${id}">
+    <a th:href="@{/matchjanken(id=${id},hand=Gu)}">ぐー</a>
+    <a th:href="@{/matchjanken(id=${id},hand=Choki)}">ちょき</a>
+    <a th:href="@{/matchjanken(id=${id},hand=Pa)}">ぱー</a>
+  </div>
+
+  <div th:if="${result}">
+    <span id="jankenResult"></span>
+  </div>
+  <a href="/lec02">もどる</a>
+
 </body>
+
+</html>
