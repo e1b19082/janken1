@@ -1,4 +1,4 @@
-package oit.is.z0209.kaizi.janken2.controller;
+package oit.is.z0209.kaizi.janken1.controller;
 
 import java.security.Principal;
 import java.util.ArrayList;
@@ -14,15 +14,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
-import oit.is.z0209.kaizi.janken2.model.Janken;
-import oit.is.z0209.kaizi.janken2.model.Entry;
-import oit.is.z0209.kaizi.janken2.model.Match;
-import oit.is.z0209.kaizi.janken2.model.MatchInfo;
-import oit.is.z0209.kaizi.janken2.model.MatchInfoMapper;
-import oit.is.z0209.kaizi.janken2.model.MatchMapper;
-import oit.is.z0209.kaizi.janken2.model.User;
-import oit.is.z0209.kaizi.janken2.model.UserMapper;
-import oit.is.z0209.kaizi.janken2.service.AsyncKekka;
+import oit.is.z0209.kaizi.janken1.model.Janken;
+import oit.is.z0209.kaizi.janken1.model.Entry;
+import oit.is.z0209.kaizi.janken1.model.Match;
+import oit.is.z0209.kaizi.janken1.model.MatchInfo;
+import oit.is.z0209.kaizi.janken1.model.MatchInfoMapper;
+import oit.is.z0209.kaizi.janken1.model.MatchMapper;
+import oit.is.z0209.kaizi.janken1.model.User;
+import oit.is.z0209.kaizi.janken1.model.UserMapper;
+import oit.is.z0209.kaizi.janken1.service.AsyncKekka;
 
 @Controller
 public class Lec02Controller {

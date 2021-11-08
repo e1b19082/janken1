@@ -1,4 +1,4 @@
-package oit.is.z0209.kaizi.janken2.service;
+package oit.is.z0209.kaizi.janken1.service;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
-import oit.is.z0209.kaizi.janken2.model.Match;
-import oit.is.z0209.kaizi.janken2.model.MatchMapper;
+import oit.is.z0209.kaizi.janken1.model.Match;
+import oit.is.z0209.kaizi.janken1.model.MatchMapper;
 
 @Service
 public class AsyncKekka {
